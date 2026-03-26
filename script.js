@@ -8,13 +8,15 @@ fetch('data.json')
 // Search function
 function searchArticle(value = null) {
     const input = value || document.getElementById("searchInput").value.toLowerCase();
-    const resultDiv = document.getElementById("result");
 
     let found = null;
 
+    // Search by number
     if (articles[input]) {
         found = { number: input, text: articles[input] };
-    } else {
+    } 
+    // Search by keyword
+    else {
         for (let key in articles) {
             if (articles[key].toLowerCase().includes(input)) {
                 found = { number: key, text: articles[key] };
@@ -24,14 +26,11 @@ function searchArticle(value = null) {
     }
 
     if (found) {
-    window.location.href = `article.html?article=${found.number}`;
-    resultDiv.innerHTML = `
-            <h2>Article ${found.number}</h2>
-            <p>${found.text}</p>
-        `;
+        // Redirect to new page
+        window.location.href = `article.html?article=${found.number}`;
     } else {
-        resultDiv.style.display = "block";
-        resultDiv.innerHTML = `<p>❌ No matching article found</p>`;
+        document.getElementById("result").style.display = "block";
+        document.getElementById("result").innerHTML = `<p>❌ No matching article found</p>`;
     }
 
     document.getElementById("suggestions").innerHTML = "";
@@ -60,11 +59,14 @@ function showSuggestions() {
 
             count++;
             if (count >= 5) break;
-            
         }
     }
 }
 
+// Dark mode toggle
+function toggleTheme() {
+    document.body.classList.toggle("dark");
+}
 // Dark mode toggle
 function toggleTheme() {
     document.body.classList.toggle("dark");
