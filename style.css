@@ -101,3 +101,17 @@ button:hover {
 .suggestions div:hover {
     background: #eee;
 }
+
+.back-btn {
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ffcc00;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.back-btn:hover {
+    background-color: #ffaa00;
+}
