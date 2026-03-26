@@ -1,9 +1,13 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #141e30, #243b55);
+    background: 
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: white;
-    transition: 0.3s;
 }
 
 .dark {
@@ -12,7 +16,12 @@ body {
 }
 
 .container {
-    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    width: 70%;
+    margin: auto;
     margin-top: 80px;
 }
 
